@@ -24,4 +24,4 @@ int main()
     cout << "size of arr:" << sizeof(arr) << endl;
 
     return 0;
-}
+} 
