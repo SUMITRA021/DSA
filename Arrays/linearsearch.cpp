@@ -17,15 +17,27 @@ int main()
 
     cout << "Target:" << endl;
     cin >> target;
-    
+
+    bool flag = 0; // 0 ->not found, 1->found
+
+
     for (int i = 0; i < n;i++)
     {
         if(arr[i]==target)
         {
-            cout << "Target found" << endl;
+            flag = 1;
             break;
         }
         
     }
-        return 0;
+
+    if(flag == 1)
+    {
+        cout << "Target found" << endl;
+           
+    }
+    else{
+        cout << "Not found";
+    }
+    return 0;
 }
