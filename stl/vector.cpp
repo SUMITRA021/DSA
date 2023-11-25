@@ -14,9 +14,15 @@ void print(vector<int>v)
 int main()
 {
     vector<int> v;
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
-    print(v);
-    return 0;
+    while(1){
+    int n;
+    cout << "Enter n value\n";
+    cin >> n;
+    
+    v.push_back(n);
+    cout << "Capacity:" << v.capacity() << " "
+         << "size:" << v.size() << endl;
+    //print(v);
+    }
+   
 }
