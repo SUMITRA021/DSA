@@ -31,4 +31,14 @@ int main()
 
     v.pop_back();
     print(v);
+
+
+    //clear the vector
+    v.clear();
+    cout << "size:" << v.size() << endl;
+    cout << "capacity:" << v.capacity() << endl;
+    v.push_back(90);
+    cout << "size:" << v.size() << endl;
+    cout << "capacity:" << v.capacity() << endl;
+    print(v);
 }
