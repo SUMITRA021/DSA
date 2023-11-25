@@ -28,6 +28,7 @@ int main()
     v.push_back(3);
 
     print(v);
-    
-   
+
+    v.pop_back();
+    print(v);
 }
