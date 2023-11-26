@@ -15,17 +15,30 @@ void printArray(int arr[][3],int row,int col)
     }
 }
 
+// //with upper triangle
+// void transposeMat(int arr[][3],int row,int col)
+// {
+//     for (int i = 0; i < row;i++)
+//     {
+//         for (int j = i; j < col;j++)
+//         {
+//             swap(arr[i][j], arr[j][i]);
+//         }
+//     }
+// }
+
+
+//with lower triangle
 void transposeMat(int arr[][3],int row,int col)
 {
     for (int i = 0; i < row;i++)
     {
-        for (int j = i; j < col;j++)
+        for (int j = 0; j <=i;j++)
         {
             swap(arr[i][j], arr[j][i]);
         }
     }
 }
-
 
 
 int main()
