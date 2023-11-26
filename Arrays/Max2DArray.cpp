@@ -29,6 +29,20 @@ void Max(int arr[][3],int row,int col)
     cout << "max:"<<max;
 }
 
+void Min(int arr[][3],int row,int col)
+{
+    int min = INT_MAX;
+    for (int i = 0; i < row;i++)
+    {
+        for (int j = 0; j < col;j++)
+        {
+            if(arr[i][j]<min){
+                min = arr[i][j];}
+        }
+    }
+    cout << "min:"<<min;
+}
+
 int main()
 {
     int row = 3;
@@ -38,4 +52,7 @@ int main()
     //printArrayRowWise(arr, row, col);
 
     Max(arr, row, col);
+    cout << endl;
+    Min(arr, row, col);
+
 }
