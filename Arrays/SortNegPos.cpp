@@ -19,7 +19,7 @@ void sortArray(int arr[],int n)
 
 int main()
 {
-    int arr[]={23,-7,12,-10,-11,40,60};
+    int arr[]={23,-7,0 ,-10,-11,40,60};
     int n = 7;
     
 

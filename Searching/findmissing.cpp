@@ -18,14 +18,17 @@ int missingNumber(int arr[],int n)
         }
         mid = s + (e - s) / 2;
     }
+
+    if(val+1!=0)
+        return n + 1;
     finl = val - 1;
     return finl;
 }
 
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 6, 7, 8, 9};
-    int n = 8;
+    int arr[] = {1,2, 3, 4,5, 6, 7};
+    int n = 7;
     int value = missingNumber(arr, n);
 
     cout << "Missing Number:" << value << endl;
