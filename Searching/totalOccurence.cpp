@@ -1,0 +1,80 @@
+#include<iostream>
+using namespace std;
+
+int findfirstoccurance(int arr[],int n,int target)
+{
+    int s = 0;
+    int e = n - 1;
+    int val=-1;
+    // int mid = (s + e) / 2; -- can be integer overflow
+    //best practice
+    int mid = s + (e - s) / 2;
+
+    while(s<=e)
+    {
+        if(arr[mid]==target){
+            val=mid;
+            e = mid-1 ;}
+        else if(target>arr[mid])
+            s = mid + 1;
+        else if(target<arr[mid])
+            e = mid - 1;
+        //mid update -- here we will make mistake
+        mid = (s + e) / 2;
+    }
+    //here means element not found
+    return val;
+}
+
+
+int findlastoccurance(int arr[],int n,int target)
+{
+    int s = 0;
+    int e = n - 1;
+    int val=-1;
+    // int mid = (s + e) / 2; -- can be integer overflow
+    //best practice
+    int mid = s + (e - s) / 2;
+
+    while(s<=e)
+    {
+        if(arr[mid]==target){
+            val=mid;
+            s = mid+1 ;}
+        else if(target>arr[mid])
+            s = mid + 1;
+        else if(target<arr[mid])
+            e = mid - 1;
+        //mid update -- here we will make mistake
+        mid = (s + e) / 2;
+    }
+
+
+    //here means element not found
+    return val;
+}
+
+int totalOccurence(int arr[],int n,int target)
+{
+    int firstOc = findfirstoccurance(arr, n, target);
+    int lastOc = findlastoccurance(arr, n, target);
+    int total = lastOc - firstOc + 1;
+    return total;
+}
+
+
+int main()
+{
+    int arr[] = {10, 30, 30, 30, 30, 30, 40,50};
+    int n = 8;
+    int target;
+    cout << "Enter target" << endl;
+    cin >> target;
+    findfirstoccurance(arr, n,target);
+    findlastoccurance(arr, n, target);
+
+    int total = totalOccurence(arr, n, target);
+    cout << "Total Occurence:" <<total << endl;
+
+    return 0;
+}
