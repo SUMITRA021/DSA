@@ -70,8 +70,7 @@ int main()
     int target;
     cout << "Enter target" << endl;
     cin >> target;
-    findfirstoccurance(arr, n,target);
-    findlastoccurance(arr, n, target);
+    
 
     int total = totalOccurence(arr, n, target);
     cout << "Total Occurence:" <<total << endl;
