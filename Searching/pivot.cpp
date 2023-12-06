@@ -12,9 +12,9 @@ int findPivotint(vector<int>& nums) {
            //corner case single element
             if(s==e)
                 return e;
-            else if(nums[mid]<nums[mid-1])
+            else if(mid>=0 && nums[mid]<nums[mid-1])
                 return (mid-1);
-            else if(nums[mid]>nums[mid+1])
+            else if(mid<n && nums[mid]>nums[mid+1])
                 return mid;
             else if(nums[s]>nums[mid])
                 e=mid-1;
