@@ -13,14 +13,15 @@ int division(int divident,int divisor)
         {
             return mid;
         }
-        else if(mid*divisor < divident)
+        else if(mid*divisor > divident)
         {   
-            ans = mid;
-            s = mid + 1;
+            e = mid - 1;
+            
         }
         else
         {
-            e = mid - 1;
+            ans = mid;
+            s = mid + 1;
         }
             
         mid = s + (e - s) / 2;
@@ -30,9 +31,16 @@ int division(int divident,int divisor)
 
 int main()
 {
-    int divisor = 7;
-    int divident = 29;
-    int ans = division(divident, divisor);
+    int divisor = 7 ;
+    int divident = -29;
+    int ans = division(abs(divident), abs(divisor));
+    //now we need to decide sign '+' or '-'
+    
+    if((divisor<0&&divident>0)||(divisor>0&&divident<0))
+    {
+        ans = 0 - ans;
+    }
+
     cout << ans;
     return 0;
 }
