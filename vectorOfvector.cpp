@@ -16,6 +16,12 @@ for (int i = 0; i < v.size();i++)
   cout << endl;
 }
 
+bool mycomp(vector<int>&a,vector<int>&b)
+{
+    //return a[0]<b[0] ---- sort wrt index 0
+    return a[1] < b[1]; // --sort wrt index 1 in inc order
+    //return a[1] > b[1]; // --sort wrt index 1 in dec order
+}
 
 
 
@@ -34,5 +40,18 @@ int main() {
     }
     cout << "Vector of vector" << endl;
     print(v);
+
+    // //Normal sort
+    // cout << "Sort Normal:" << endl;
+    // sort(v.begin(), v.end());
+    // print(v);
+
+
+    
+    //sort with respect to second index
+    cout << "Sort with respect to second index:" << endl;
+    sort(v.begin(), v.end(),mycomp);
+    print(v);
+
     return 0;
 }
